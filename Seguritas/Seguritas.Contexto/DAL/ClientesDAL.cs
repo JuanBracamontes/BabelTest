@@ -11,24 +11,37 @@ namespace Seguritas.Contexto.DAL
     public class ClientesDAL
     {
 
-        public static ProcessResult ListarClientes()
+        public static async Task<ProcessResult> ListarClientes()
         {
             ProcessResult pResult = new ProcessResult();
-            try
+            await Task.Run(() =>
             {
-                var ltCliente = new List<Cliente>();
-                using (var ctx = new SeguritasContext())
+                try
                 {
-                    var response = ctx.Clientes;
+                    var ltCliente = new List<ClienteModel>();
+                    using (var ctx = new SeguritasContext())
+                    {
+                        var response = ctx.Clientes.ToList();
+                        foreach (var item in response)
+                        {
+                            ltCliente.Add(new ClienteModel()
+                            {
+                                FechaCreacion = item.FechaCreacion.ToString("dd/mm/YYYY"),
+                                FechaModificacion = item.FechaModificacion.ToString("dd/mm/YYYY"),
+                                Nombre = item.Nombre,
+                                Id = item.Id
+                            });
+                        }
+                        pResult.Result = ltCliente;
+                    }
                 }
-            }
-            catch (Exception ex)
-            {
-                pResult.Mensaje = ex.Message;
-                pResult.Status = ProcessResult.StatusCode.Failure;
-                pResult.CodeRequest = ProcessResult.ProcessCodeTypes.InternalServerError;
-            }
-            
+                catch (Exception ex)
+                {
+                    pResult.Mensaje = ex.Message;
+                    pResult.Status = ProcessResult.StatusCode.Failure;
+                    pResult.CodeRequest = ProcessResult.ProcessCodeTypes.InternalServerError;
+                }
+            });
             return pResult;
         }
 

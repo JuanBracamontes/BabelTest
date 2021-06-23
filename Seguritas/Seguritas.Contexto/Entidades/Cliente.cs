@@ -19,7 +19,11 @@ namespace SeguritasModel.Entidades
         public string Nombre { get; set; }
         public DateTime FechaCreacion { get; set; }
         public DateTime FechaModificacion { get; set; }
-        public List<ClienteRelPlan> ClienteRelPlanes { get; set; }
+
+        /// <summary>
+        /// Navigation property
+        /// </summary>
+        public IList<Plan> Planes { get; set; }
 
     }
 }

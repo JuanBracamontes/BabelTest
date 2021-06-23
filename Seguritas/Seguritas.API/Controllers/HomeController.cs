@@ -1,4 +1,5 @@
-﻿using Seguritas.Negocio;
+﻿using Newtonsoft.Json;
+using Seguritas.Negocio;
 using Seguritas.Negocio.Utilities;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,7 @@ using System.Web.Mvc;
 
 namespace Seguritas.API.Controllers
 {
-    
+
     public class HomeController : Controller
     {
         public ActionResult Index()
@@ -22,9 +23,10 @@ namespace Seguritas.API.Controllers
 
         [HttpGet]
         [Route("Home/GetClientes")]
-        public ProcessResult GetClientes()
+        public JsonResult GetClientes()
         {
-            return FxClientes.ObtenerClientes();
+            var data = FxClientes.ObtenerClientes() ;
+            return Json(new { data }, JsonRequestBehavior.AllowGet);
         }
 
         //[HttpDelete]

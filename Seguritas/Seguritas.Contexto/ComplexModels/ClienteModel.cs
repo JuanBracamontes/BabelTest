@@ -8,14 +8,11 @@ using System.Threading.Tasks;
 
 namespace SeguritasModel.Entidades
 {
-    [Table(@"ClienteRelPlan")]
-    public class ClienteRelPlan
+    public class ClienteModel
     {
-        [Required]
-        [Key]
         public int Id { get; set; }
-        public int ClienteId { get; set; }
-        public int PlanId { get; set; }
-
+        public string Nombre { get; set; }
+        public string FechaCreacion { get; set; }
+        public string FechaModificacion { get; set; }
     }
 }

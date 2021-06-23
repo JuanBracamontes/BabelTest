@@ -19,7 +19,7 @@ namespace Seguritas.Negocio
 
             try
             {
-                var responseDAL = ClientesDAL.ListarClientes();
+                var responseDAL = Task.Run(async () => await ClientesDAL.ListarClientes()).Result;
                 if (responseDAL.Status != Contexto.Utilities.ProcessResult.StatusCode.Failure)
                     pResult.Result = responseDAL.Result;
                 else
@@ -36,10 +36,9 @@ namespace Seguritas.Negocio
                 pResult.Status = ProcessResult.StatusCode.Failure;
                 pResult.CodeRequest = ProcessResult.ProcessCodeTypes.InternalServerError;
             }
-
-
             return pResult;
-        }
 
+
+        }
     }
 }

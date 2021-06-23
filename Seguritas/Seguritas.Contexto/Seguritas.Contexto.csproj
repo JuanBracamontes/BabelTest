@@ -51,15 +51,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ComplexModels\ClienteModel.cs" />
     <Compile Include="DAL\ClientesDAL.cs" />
     <Compile Include="Entidades\Cliente.cs" />
-    <Compile Include="Entidades\ClienteRelPlan.cs" />
     <Compile Include="Entidades\Cobertura.cs" />
     <Compile Include="Entidades\Plan.cs" />
-    <Compile Include="Entidades\PlanRelCobertura.cs" />
-    <Compile Include="Migrations\202106192149599_InitialMigration.cs" />
-    <Compile Include="Migrations\202106192149599_InitialMigration.designer.cs">
-      <DependentUpon>202106192149599_InitialMigration.cs</DependentUpon>
+    <Compile Include="Migrations\202106222101288_Initial.cs" />
+    <Compile Include="Migrations\202106222101288_Initial.designer.cs">
+      <DependentUpon>202106222101288_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -71,12 +70,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ComplexModels\" />
     <Folder Include="Configuraciones\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202106192149599_InitialMigration.resx">
-      <DependentUpon>202106192149599_InitialMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202106222101288_Initial.resx">
+      <DependentUpon>202106222101288_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -14,19 +14,29 @@ namespace Seguritas.Contexto
         public DbSet<Cobertura> Coberturas { get; set; }
         public DbSet<Plan> Planes { get; set; }
         public DbSet<Cliente> Clientes { get; set; }
-        public DbSet<ClienteRelPlan> ClienteRelPlanes { get; set; }
-        public DbSet<PlanRelCobertura> PlanRelCoberturas { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            
             modelBuilder.HasDefaultSchema("dbo");
             //Configure domain classes using modelBuilder here..
+            modelBuilder.Entity<Cliente>()
+                .HasMany(t => t.Planes)
+                .WithMany(t => t.Clientes)
+                .Map(m => { 
+                    m.ToTable("ClienteRelPlan");
+                    m.MapLeftKey("ClienteId");
+                    m.MapRightKey("PlanId");
+                });
 
-         /* modelBuilder.Entity<Cobertura>().HasKey<int>(s => s.Id);
-            modelBuilder.Entity<Plan>().HasKey<int>(s => s.Id);
-            modelBuilder.Entity<Cliente>().HasKey<int>(s => s.Id);
-            modelBuilder.Entity<PlanRelCobertura>().HasKey(s => s.Id);
-            modelBuilder.Entity<ClienteRelPlan>().HasKey(s => s.Id);*/
+            modelBuilder.Entity<Plan>()
+                .HasMany(t => t.Coberturas)
+                .WithMany(t => t.Planes)
+                .Map(m => {
+                    m.ToTable("PlanRelCoberturas");
+                    m.MapLeftKey("PlanId");
+                    m.MapRightKey("CoberturaId");
+                });
         }
 
     }

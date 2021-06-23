@@ -11,5 +11,6 @@ namespace Seguritas.API.Models
         public int IdPlan { get; set; }
         public int IdCliente { get; set; }
         public int IdCobertura { get; set; }
+        public bool TieneNodosHijos { get; set; }
     }
 }

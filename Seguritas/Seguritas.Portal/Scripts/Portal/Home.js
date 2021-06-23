@@ -15,17 +15,18 @@ var Home = new function () {
         $.ajax({
             url: "https://localhost:44372/Home/GetClientes",
             method: "GET",
-            contentType: 'application/json',
-            dataType: 'json',
+            dataType:'json',
             success: function (response) {
-                if (response) {
-                    console.log(response);
+                var apiResponse = response.data;
+                if (apiResponse.CodeRequest == 200) {
+                    console.log(apiResponse.Result);
+                } else {
+                    console.error(apiResponse.Mensaje);
                 }
             },
-            error: function (err) {
-                console.log(err);
+            error: function (xhr, status, error) {
+                console.error(xhr);
             }
-
         })
     }
 

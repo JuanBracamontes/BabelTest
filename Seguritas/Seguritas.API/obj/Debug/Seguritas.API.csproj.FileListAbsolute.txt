@@ -83,8 +83,6 @@ C:\devdemo\Seguritas\Seguritas.API\obj\Debug\Seguritas.API.csproj.CoreCompileInp
 C:\devdemo\Seguritas\Seguritas.API\obj\Debug\Seguritas.API.csproj.CopyComplete
 C:\devdemo\Seguritas\Seguritas.API\obj\Debug\Seguritas.API.dll
 C:\devdemo\Seguritas\Seguritas.API\obj\Debug\Seguritas.API.pdb
-C:\Babel\Seguritas\Seguritas.API\obj\Debug\Seguritas.API.csproj.AssemblyReference.cache
-C:\Babel\Seguritas\Seguritas.API\obj\Debug\Seguritas.API.csproj.CoreCompileInputs.cache
 C:\Babel\Seguritas\Seguritas.API\bin\Seguritas.API.dll.config
 C:\Babel\Seguritas\Seguritas.API\bin\Seguritas.API.dll
 C:\Babel\Seguritas\Seguritas.API\bin\Seguritas.API.pdb
@@ -211,6 +209,8 @@ C:\Babel\Seguritas\Seguritas.API\bin\Antlr3.Runtime.pdb
 C:\Babel\Seguritas\Seguritas.API\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Babel\Seguritas\Seguritas.API\bin\Seguritas.Contexto.pdb
 C:\Babel\Seguritas\Seguritas.API\bin\Seguritas.Contexto.dll.config
+C:\Babel\Seguritas\Seguritas.API\obj\Debug\Seguritas.API.csproj.AssemblyReference.cache
+C:\Babel\Seguritas\Seguritas.API\obj\Debug\Seguritas.API.csproj.CoreCompileInputs.cache
 C:\Babel\Seguritas\Seguritas.API\obj\Debug\Seguritas.API.csproj.CopyComplete
 C:\Babel\Seguritas\Seguritas.API\obj\Debug\Seguritas.API.dll
 C:\Babel\Seguritas\Seguritas.API\obj\Debug\Seguritas.API.pdb

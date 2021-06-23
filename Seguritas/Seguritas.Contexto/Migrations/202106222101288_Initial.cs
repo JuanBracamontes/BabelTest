@@ -3,26 +3,23 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialMigration : DbMigration
+    public partial class Initial : DbMigration
     {
         public override void Up()
         {
             CreateTable(
-                "dbo.ClienteRelPlan",
+                "dbo.Cliente",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        ClienteId = c.Int(nullable: false),
-                        PlanId = c.Int(nullable: false),
+                        Nombre = c.String(nullable: false, maxLength: 200),
+                        FechaCreacion = c.DateTime(nullable: false),
+                        FechaModificacion = c.DateTime(nullable: false),
                     })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Cliente", t => t.ClienteId, cascadeDelete: true)
-                .ForeignKey("dbo.Plan", t => t.PlanId, cascadeDelete: true)
-                .Index(t => t.ClienteId)
-                .Index(t => t.PlanId);
+                .PrimaryKey(t => t.Id);
             
             CreateTable(
-                "dbo.Cliente",
+                "dbo.Plan",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
@@ -44,47 +41,48 @@
                 .PrimaryKey(t => t.Id);
             
             CreateTable(
-                "dbo.PlanRelCobertura",
+                "dbo.PlanRelCoberturas",
                 c => new
                     {
-                        Id = c.Int(nullable: false, identity: true),
-                        CoberturaId = c.Int(nullable: false),
                         PlanId = c.Int(nullable: false),
+                        CoberturaId = c.Int(nullable: false),
                     })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Cobertura", t => t.CoberturaId, cascadeDelete: true)
+                .PrimaryKey(t => new { t.PlanId, t.CoberturaId })
                 .ForeignKey("dbo.Plan", t => t.PlanId, cascadeDelete: true)
-                .Index(t => t.CoberturaId)
-                .Index(t => t.PlanId);
+                .ForeignKey("dbo.Cobertura", t => t.CoberturaId, cascadeDelete: true)
+                .Index(t => t.PlanId)
+                .Index(t => t.CoberturaId);
             
             CreateTable(
-                "dbo.Plan",
+                "dbo.ClienteRelPlan",
                 c => new
                     {
-                        Id = c.Int(nullable: false, identity: true),
-                        Nombre = c.String(nullable: false, maxLength: 200),
-                        FechaCreacion = c.DateTime(nullable: false),
-                        FechaModificacion = c.DateTime(nullable: false),
+                        ClienteId = c.Int(nullable: false),
+                        PlanId = c.Int(nullable: false),
                     })
-                .PrimaryKey(t => t.Id);
+                .PrimaryKey(t => new { t.ClienteId, t.PlanId })
+                .ForeignKey("dbo.Cliente", t => t.ClienteId, cascadeDelete: true)
+                .ForeignKey("dbo.Plan", t => t.PlanId, cascadeDelete: true)
+                .Index(t => t.ClienteId)
+                .Index(t => t.PlanId);
             
         }
         
         public override void Down()
         {
-            DropForeignKey("dbo.PlanRelCobertura", "PlanId", "dbo.Plan");
             DropForeignKey("dbo.ClienteRelPlan", "PlanId", "dbo.Plan");
-            DropForeignKey("dbo.PlanRelCobertura", "CoberturaId", "dbo.Cobertura");
             DropForeignKey("dbo.ClienteRelPlan", "ClienteId", "dbo.Cliente");
-            DropIndex("dbo.PlanRelCobertura", new[] { "PlanId" });
-            DropIndex("dbo.PlanRelCobertura", new[] { "CoberturaId" });
+            DropForeignKey("dbo.PlanRelCoberturas", "CoberturaId", "dbo.Cobertura");
+            DropForeignKey("dbo.PlanRelCoberturas", "PlanId", "dbo.Plan");
             DropIndex("dbo.ClienteRelPlan", new[] { "PlanId" });
             DropIndex("dbo.ClienteRelPlan", new[] { "ClienteId" });
-            DropTable("dbo.Plan");
-            DropTable("dbo.PlanRelCobertura");
-            DropTable("dbo.Cobertura");
-            DropTable("dbo.Cliente");
+            DropIndex("dbo.PlanRelCoberturas", new[] { "CoberturaId" });
+            DropIndex("dbo.PlanRelCoberturas", new[] { "PlanId" });
             DropTable("dbo.ClienteRelPlan");
+            DropTable("dbo.PlanRelCoberturas");
+            DropTable("dbo.Cobertura");
+            DropTable("dbo.Plan");
+            DropTable("dbo.Cliente");
         }
     }
 }

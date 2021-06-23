@@ -228,6 +228,7 @@
     <Compile Include="Models\BorradoModel.cs" />
     <Compile Include="Models\Enumerados.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\ProcessResult.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
