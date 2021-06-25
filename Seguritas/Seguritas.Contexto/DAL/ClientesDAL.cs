@@ -26,8 +26,8 @@ namespace Seguritas.Contexto.DAL
                         {
                             ltCliente.Add(new ClienteModel()
                             {
-                                FechaCreacion = item.FechaCreacion.ToString("dd/mm/YYYY"),
-                                FechaModificacion = item.FechaModificacion.ToString("dd/mm/YYYY"),
+                                FechaCreacion = item.FechaCreacion.ToString("dd/MM/yyyy"),
+                                FechaModificacion = item.FechaModificacion.ToString("dd/MM/yyyy"),
                                 Nombre = item.Nombre,
                                 Id = item.Id
                             });

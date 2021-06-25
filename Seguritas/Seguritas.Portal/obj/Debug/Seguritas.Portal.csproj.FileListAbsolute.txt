@@ -151,7 +151,6 @@ C:\Babel\Seguritas\Seguritas.Portal\bin\System.Web.WebPages.Razor.xml
 C:\Babel\Seguritas\Seguritas.Portal\bin\Newtonsoft.Json.xml
 C:\Babel\Seguritas\Seguritas.Portal\bin\Antlr3.Runtime.pdb
 C:\Babel\Seguritas\Seguritas.Portal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Babel\Seguritas\Seguritas.Portal\obj\Debug\Seguritas.Portal.csproj.AssemblyReference.cache
 C:\Babel\Seguritas\Seguritas.Portal\obj\Debug\Seguritas.Portal.csproj.CoreCompileInputs.cache
 C:\Babel\Seguritas\Seguritas.Portal\obj\Debug\Seguritas.Portal.csproj.CopyComplete
 C:\Babel\Seguritas\Seguritas.Portal\obj\Debug\Seguritas.Portal.dll

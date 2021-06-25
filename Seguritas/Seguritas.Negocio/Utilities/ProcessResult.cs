@@ -25,6 +25,7 @@ namespace Seguritas.Negocio.Utilities
 
         public enum StatusCode
         {
+            Success,
             Complete,
             Failure
         }

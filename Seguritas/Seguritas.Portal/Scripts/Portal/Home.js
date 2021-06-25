@@ -7,17 +7,16 @@ var Home = new function () {
     var self = this;
 
     function _initJS() {
-        console.log("Se ha iniciado el js del home");
         obtenerClientes();
     }
 
     function obtenerClientes() {
         $.ajax({
-            url: "https://localhost:44372/Home/GetClientes",
+            url: "https://localhost:44372/Clientes/ObtenerListado",
             method: "GET",
             dataType:'json',
-            success: function (response) {
-                var apiResponse = response.data;
+            success: function (apiResponse) {
+                debugger;
                 if (apiResponse.CodeRequest == 200) {
                     console.log(apiResponse.Result);
                 } else {
@@ -25,6 +24,7 @@ var Home = new function () {
                 }
             },
             error: function (xhr, status, error) {
+                debugger;
                 console.error(xhr);
             }
         })

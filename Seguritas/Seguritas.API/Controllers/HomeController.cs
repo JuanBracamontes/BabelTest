@@ -1,39 +1,35 @@
-﻿using Newtonsoft.Json;
+﻿using Seguritas.Contexto.Utilities;
 using Seguritas.Negocio;
-using Seguritas.Negocio.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using System.Web;
-using System.Web.Http.Cors;
+using System.Net;
+using System.Net.Http;
 using System.Web.Mvc;
+using Seguritas.API.Models;
 
 namespace Seguritas.API.Controllers
 {
-
     public class HomeController : Controller
     {
-        public ActionResult Index()
-        {
-            ViewBag.Title = "Home Page";
-
-            return View();
-        }
-
+        // GET api/values
         [HttpGet]
-        [Route("Home/GetClientes")]
-        public JsonResult GetClientes()
+        [Route("Home/GetHome")]
+        public JsonResult GetHome()
         {
-            var data = FxClientes.ObtenerClientes() ;
-            return Json(new { data }, JsonRequestBehavior.AllowGet);
+            var data = FxHome.ListarRegistros();
+            return Json(data);
         }
 
-        //[HttpDelete]
-        //[Route("Home/Delete")]
-        //public async Task<ProcessResult> DeleteRecord()
-        //{
-        //    return await FxClientes.ObtenerClientes();
-        //}
+        // GET api/values/5
+        public string Get(int id)
+        {
+            return "value";
+        }
+
+        // DELETE api/values/5
+        public void Delete(int id)
+        {
+        }
     }
 }

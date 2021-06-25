@@ -18,10 +18,10 @@ C:\Babel\Seguritas\Seguritas.Contexto\bin\Debug\EntityFramework.dll
 C:\Babel\Seguritas\Seguritas.Contexto\bin\Debug\EntityFramework.SqlServer.dll
 C:\Babel\Seguritas\Seguritas.Contexto\bin\Debug\EntityFramework.xml
 C:\Babel\Seguritas\Seguritas.Contexto\bin\Debug\EntityFramework.SqlServer.xml
-C:\Babel\Seguritas\Seguritas.Contexto\obj\Debug\Seguritas.Contexto.csproj.AssemblyReference.cache
 C:\Babel\Seguritas\Seguritas.Contexto\obj\Debug\Seguritas.Contexto.csproj.CoreCompileInputs.cache
 C:\Babel\Seguritas\Seguritas.Contexto\obj\Debug\Seguritas.Contexto.csproj.CopyComplete
 C:\Babel\Seguritas\Seguritas.Contexto\obj\Debug\Seguritas.Contexto.dll
 C:\Babel\Seguritas\Seguritas.Contexto\obj\Debug\Seguritas.Contexto.pdb
 C:\Babel\Seguritas\Seguritas.Contexto\obj\Debug\Seguritas.Contexto.Migrations.Initial.resources
 C:\Babel\Seguritas\Seguritas.Contexto\obj\Debug\Seguritas.Contexto.csproj.GenerateResource.cache
+C:\Babel\Seguritas\Seguritas.Contexto\obj\Debug\Seguritas.Contexto.csproj.AssemblyReference.cache
